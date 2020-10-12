@@ -76,6 +76,8 @@ class _HomeState extends State<Home> {
 class CategoriesScroller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final double categoryHeight =
+        MediaQuery.of(context).size.height * 0.30 - 50;
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
@@ -84,7 +86,14 @@ class CategoriesScroller extends StatelessWidget {
         child: FittedBox(
           fit: BoxFit.fill,
           alignment: Alignment.topCenter,
-          child: Row(),
+          child: Row(
+            children: <Widget>[
+              Container(
+                width: 150,
+                height: categoryHeight,
+              ),
+            ],
+          ),
         ),
       ),
     );
