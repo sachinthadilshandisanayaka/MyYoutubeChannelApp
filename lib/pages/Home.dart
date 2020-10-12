@@ -79,6 +79,14 @@ class CategoriesScroller extends StatelessWidget {
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
+      child: Container(
+        margin: EdgeInsets.all(20),
+        child: FittedBox(
+          fit: BoxFit.fill,
+          alignment: Alignment.topCenter,
+          child: Row(),
+        ),
+      ),
     );
   }
 }
