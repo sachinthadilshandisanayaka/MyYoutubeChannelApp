@@ -93,101 +93,62 @@ class CategoriesScroller extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 10),
             child: Row(
               children: <Widget>[
-                Container(
-                  width: 150,
-                  margin: EdgeInsets.only(right: 10),
-                  height: categoryHeight,
-                  decoration: BoxDecoration(
-                    color: Colors.orange.shade400,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(2, 2),
-                        blurRadius: 2,
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
-                            'Video Name',
+                TextButton(
+                  onPressed: () => {},
+                  child: Container(
+                    width: 150,
+                    margin: EdgeInsets.only(right: 5),
+                    height: categoryHeight,
+                    decoration: BoxDecoration(
+                      color: Colors.orange.shade400,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Text(
+                            'Dasa Production',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 30.0,
+                              fontFamily: 'AmaticSC',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(2, 2),
+                                  blurRadius: 10,
+                                )
+                              ],
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
                             'Discription',
                             style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  width: 150,
-                  margin: EdgeInsets.only(right: 10),
-                  height: categoryHeight,
-                  decoration: BoxDecoration(
-                    color: Colors.orange.shade400,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(2, 2),
-                        blurRadius: 2,
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Container(
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          TextButton(
-                            onPressed: null,
-                            child: Text(
-                              'Video Name',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 30.0,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          TextButton(
-                            onPressed: null,
-                            child: Text(
-                              'Discription',
-                              style: TextStyle(
-                                fontSize: 15.0,
-                                color: Colors.white,
-                              ),
+                              fontFamily: 'Nunito',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(1, 1),
+                                  blurRadius: 5,
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -195,101 +156,196 @@ class CategoriesScroller extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  width: 150,
-                  height: categoryHeight,
-                  margin: EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.orange.shade400,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(2, 2),
-                        blurRadius: 2,
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
-                            'Video Name',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 30.0,
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
-                            'Discription',
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
+                TextButton(
+                  onPressed: () => {},
+                  child: Container(
+                    width: 150,
+                    margin: EdgeInsets.only(right: 5),
+                    height: categoryHeight,
+                    decoration: BoxDecoration(
+                      color: Colors.orange.shade400,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(20),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                        )
                       ],
+                    ),
+                    child: Container(
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Text(
+                              'Video Name',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 30.0,
+                                fontFamily: 'AmaticSC',
+                                shadows: <Shadow>[
+                                  Shadow(
+                                    color: Colors.black,
+                                    offset: Offset(2, 2),
+                                    blurRadius: 10,
+                                  )
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Discription',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.white,
+                                fontFamily: 'Nunito',
+                                shadows: <Shadow>[
+                                  Shadow(
+                                    color: Colors.black,
+                                    offset: Offset(1, 1),
+                                    blurRadius: 5,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  width: 150,
-                  height: categoryHeight,
-                  margin: EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                    color: Colors.orange.shade400,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black,
-                        offset: Offset(2, 2),
-                        blurRadius: 2,
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
+                TextButton(
+                  onPressed: () => {},
+                  child: Container(
+                    width: 150,
+                    height: categoryHeight,
+                    margin: EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.shade400,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Text(
                             'Video Name',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 30.0,
+                              fontFamily: 'AmaticSC',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(2, 2),
+                                  blurRadius: 10,
+                                )
+                              ],
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        TextButton(
-                          onPressed: null,
-                          child: Text(
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
                             'Discription',
                             style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.white,
+                              fontFamily: 'Nunito',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(1, 1),
+                                  blurRadius: 5,
+                                )
+                              ],
                             ),
                           ),
-                        ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () => {},
+                  child: Container(
+                    width: 150,
+                    height: categoryHeight,
+                    margin: EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      color: Colors.orange.shade400,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black,
+                          offset: Offset(2, 2),
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                        )
                       ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          Text(
+                            'Video Name',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 30.0,
+                              fontFamily: 'AmaticSC',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(2, 2),
+                                  blurRadius: 10,
+                                )
+                              ],
+                            ),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'Discription',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              color: Colors.white,
+                              fontFamily: 'Nunito',
+                              shadows: <Shadow>[
+                                Shadow(
+                                  color: Colors.black,
+                                  offset: Offset(1, 1),
+                                  blurRadius: 5,
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
