@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:dasaproduction/videos/videos.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -8,6 +7,107 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<Widget> itemData = [];
+
+  void getVideos() {
+    List<dynamic> readData = VIDEO_DATA;
+    List<Widget> listVideos = [];
+
+    readData.forEach((element) {
+      listVideos.add(Container(
+        // color: Colors.white,
+        child: Card(
+          // color: Colors.white,
+          margin: EdgeInsets.fromLTRB(5, 15, 5, 5),
+          child: Container(
+            // color: Color.fromRGBO(255, 235, 59, 1),
+            // decoration: new BoxDecoration(),
+            decoration: BoxDecoration(
+              color: Color.fromRGBO(244, 81, 30, 1),
+              // border: Border.all(
+              //   color: Colors.black,
+              //   width: 5,
+              // ),
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                new BoxShadow(
+                  blurRadius: 10,
+                  color: Colors.black,
+                  offset: Offset(1, 3),
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(30),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      children: <Widget>[
+                        Text(
+                          element['name'],
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 28,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          element['brand'],
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 18,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "\$ ${element['price']}",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      height: 100,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/${element["image"]}",
+                          ),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ));
+    });
+    setState(() {
+      itemData = listVideos;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getVideos();
+  }
+
   final CategoriesScroller categoriesScroller = CategoriesScroller();
   @override
   Widget build(BuildContext context) {
@@ -69,6 +169,15 @@ class _HomeState extends State<Home> {
                 height: 10,
               ),
               categoriesScroller,
+              Expanded(
+                child: ListView.builder(
+                  itemCount: itemData.length,
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return itemData[index];
+                  },
+                ),
+              ),
             ],
           ),
         ),
