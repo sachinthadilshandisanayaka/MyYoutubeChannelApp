@@ -1,5 +1,10 @@
 const VIDEO_DATA = [
-  {"name": "Burger", "brand": "Hawkers", "price": 2.99, "image": "burger.png"},
+  {
+    "name": "Burger",
+    "brand": "Hawkers",
+    "price": 2.99,
+    "image": "burger.png",
+  },
   {
     "name": "Cheese Dip",
     "brand": "Hawkers",

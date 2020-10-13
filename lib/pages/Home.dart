@@ -8,6 +8,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   List<Widget> itemData = [];
+  ScrollController controller = ScrollController();
+  bool closeTopContainer = false;
+  double topContainer = 0;
 
   void getVideos() {
     List<dynamic> readData = VIDEO_DATA;
@@ -23,17 +26,17 @@ class _HomeState extends State<Home> {
             // color: Color.fromRGBO(255, 235, 59, 1),
             // decoration: new BoxDecoration(),
             decoration: BoxDecoration(
-              color: Color.fromRGBO(244, 81, 30, 1),
+              color: Colors.white,
               // border: Border.all(
               //   color: Colors.black,
               //   width: 5,
               // ),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.all(Radius.circular(20.0)),
               boxShadow: [
                 new BoxShadow(
-                  blurRadius: 10,
+                  blurRadius: 7,
                   color: Colors.black,
-                  offset: Offset(1, 3),
+                  offset: Offset(1, 1),
                 ),
               ],
             ),
@@ -106,6 +109,13 @@ class _HomeState extends State<Home> {
   void initState() {
     super.initState();
     getVideos();
+    controller.addListener(() {
+      double value = controller.offset / 150;
+      setState(() {
+        closeTopContainer = controller.offset > 30;
+        topContainer = value;
+      });
+    });
   }
 
   final CategoriesScroller categoriesScroller = CategoriesScroller();
@@ -168,13 +178,49 @@ class _HomeState extends State<Home> {
               const SizedBox(
                 height: 10,
               ),
-              categoriesScroller,
+              AnimatedOpacity(
+                opacity: closeTopContainer ? 0 : 1,
+                duration: const Duration(
+                  milliseconds: 300,
+                ),
+                child: AnimatedContainer(
+                  duration: const Duration(
+                    milliseconds: 300,
+                  ),
+                  alignment: Alignment.topCenter,
+                  height: closeTopContainer
+                      ? 0
+                      : MediaQuery.of(context).size.height * 0.3,
+                  child: categoriesScroller,
+                ),
+              ),
               Expanded(
                 child: ListView.builder(
+                  controller: controller,
                   itemCount: itemData.length,
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return itemData[index];
+                    double scale = 1.0;
+                    if (topContainer > 0.3) {
+                      scale = index + 0.9 - topContainer;
+                      if (scale < 0) {
+                        scale = 0;
+                      } else if (scale > 1) {
+                        scale = 1;
+                      }
+                    }
+                    return Opacity(
+                      opacity: scale,
+                      child: Transform(
+                        transform: Matrix4.identity()..scale(scale, scale),
+                        alignment: Alignment.bottomCenter,
+                        child: Align(
+                          heightFactor: 0.8,
+                          alignment: Alignment.topCenter,
+                          child: itemData[index],
+                        ),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -194,7 +240,7 @@ class CategoriesScroller extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Container(
-        margin: EdgeInsets.only(right: 10),
+        margin: const EdgeInsets.all(10),
         child: FittedBox(
           fit: BoxFit.fill,
           alignment: Alignment.topCenter,
@@ -221,7 +267,7 @@ class CategoriesScroller extends StatelessWidget {
                       ],
                     ),
                     child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
