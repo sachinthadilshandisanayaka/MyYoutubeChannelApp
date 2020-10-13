@@ -1,4 +1,4 @@
-import 'dart:html';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
@@ -14,6 +14,7 @@ class _HomeState extends State<Home> {
     return SafeArea(
         child: Scaffold(
       // backgroundColor: Color.fromRGBO(46, 64, 83, 1.0),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         title: Text(
@@ -80,7 +81,7 @@ class CategoriesScroller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double categoryHeight =
-        MediaQuery.of(context).size.height * 0.30 - 50;
+        MediaQuery.of(context).size.height * 0.30 - 20;
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
@@ -93,6 +94,7 @@ class CategoriesScroller extends StatelessWidget {
             children: <Widget>[
               Container(
                 width: 150,
+                margin: EdgeInsets.only(right: 10),
                 height: categoryHeight,
                 decoration: BoxDecoration(
                   color: Colors.orange.shade400,
@@ -105,14 +107,27 @@ class CategoriesScroller extends StatelessWidget {
                     children: <Widget>[
                       TextButton(
                         onPressed: null,
-                        child: Text('Video Name'),
+                        child: Text(
+                          'Video Name',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 30.0,
+                          ),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       TextButton(
                         onPressed: null,
-                        child: Text('Discription'),
+                        child: Text(
+                          'Discription',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -136,14 +151,27 @@ class CategoriesScroller extends StatelessWidget {
                       children: <Widget>[
                         TextButton(
                           onPressed: null,
-                          child: Text('Video Name'),
+                          child: Text(
+                            'Video Name',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 30.0,
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: 10,
                         ),
                         TextButton(
                           onPressed: null,
-                          child: Text('Discription'),
+                          child: Text(
+                            'Discription',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -153,6 +181,7 @@ class CategoriesScroller extends StatelessWidget {
               Container(
                 width: 150,
                 height: categoryHeight,
+                margin: EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   color: Colors.orange.shade400,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -164,14 +193,27 @@ class CategoriesScroller extends StatelessWidget {
                     children: <Widget>[
                       TextButton(
                         onPressed: null,
-                        child: Text('Video Name'),
+                        child: Text(
+                          'Video Name',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 30.0,
+                          ),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       TextButton(
                         onPressed: null,
-                        child: Text('Discription'),
+                        child: Text(
+                          'Discription',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -180,6 +222,7 @@ class CategoriesScroller extends StatelessWidget {
               Container(
                 width: 150,
                 height: categoryHeight,
+                margin: EdgeInsets.only(right: 10),
                 decoration: BoxDecoration(
                   color: Colors.orange.shade400,
                   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -191,14 +234,27 @@ class CategoriesScroller extends StatelessWidget {
                     children: <Widget>[
                       TextButton(
                         onPressed: null,
-                        child: Text('Video Name'),
+                        child: Text(
+                          'Video Name',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 30.0,
+                          ),
+                        ),
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       TextButton(
                         onPressed: null,
-                        child: Text('Discription'),
+                        child: Text(
+                          'Discription',
+                          style: TextStyle(
+                            fontSize: 15.0,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ],
                   ),
