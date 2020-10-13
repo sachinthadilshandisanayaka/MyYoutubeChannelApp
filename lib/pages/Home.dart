@@ -80,8 +80,7 @@ class _HomeState extends State<Home> {
 class CategoriesScroller extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final double categoryHeight =
-        MediaQuery.of(context).size.height * 0.30 - 20;
+    final double categoryHeight = MediaQuery.of(context).size.height * 0.30;
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
@@ -90,60 +89,26 @@ class CategoriesScroller extends StatelessWidget {
         child: FittedBox(
           fit: BoxFit.fill,
           alignment: Alignment.topCenter,
-          child: Row(
-            children: <Widget>[
-              Container(
-                width: 150,
-                margin: EdgeInsets.only(right: 10),
-                height: categoryHeight,
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Video Name',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 30.0,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Discription',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  width: 150,
+                  margin: EdgeInsets.only(right: 10),
+                  height: categoryHeight,
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade400,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 2,
+                        spreadRadius: 0,
+                      )
                     ],
                   ),
-                ),
-              ),
-              Container(
-                width: 150,
-                margin: EdgeInsets.only(right: 10),
-                height: categoryHeight,
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                ),
-                child: Container(
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Column(
@@ -177,90 +142,159 @@ class CategoriesScroller extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              Container(
-                width: 150,
-                height: categoryHeight,
-                margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Video Name',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 30.0,
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Discription',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
+                Container(
+                  width: 150,
+                  margin: EdgeInsets.only(right: 10),
+                  height: categoryHeight,
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade400,
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 2,
+                        spreadRadius: 0,
+                      )
                     ],
                   ),
-                ),
-              ),
-              Container(
-                width: 150,
-                height: categoryHeight,
-                margin: EdgeInsets.only(right: 10),
-                decoration: BoxDecoration(
-                  color: Colors.orange.shade400,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Video Name',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontSize: 30.0,
+                  child: Container(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          TextButton(
+                            onPressed: null,
+                            child: Text(
+                              'Video Name',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                                fontSize: 30.0,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      TextButton(
-                        onPressed: null,
-                        child: Text(
-                          'Discription',
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.white,
+                          SizedBox(
+                            height: 10,
                           ),
-                        ),
+                          TextButton(
+                            onPressed: null,
+                            child: Text(
+                              'Discription',
+                              style: TextStyle(
+                                fontSize: 15.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+                Container(
+                  width: 150,
+                  height: categoryHeight,
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade400,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 2,
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: null,
+                          child: Text(
+                            'Video Name',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextButton(
+                          onPressed: null,
+                          child: Text(
+                            'Discription',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 150,
+                  height: categoryHeight,
+                  margin: EdgeInsets.only(right: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.shade400,
+                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(2, 2),
+                        blurRadius: 2,
+                        spreadRadius: 0,
+                      )
+                    ],
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: null,
+                          child: Text(
+                            'Video Name',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 30.0,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        TextButton(
+                          onPressed: null,
+                          child: Text(
+                            'Discription',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
