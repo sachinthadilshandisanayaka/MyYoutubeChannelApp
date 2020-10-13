@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:dasaproduction/videos/videos.dart';
 import 'package:flutter/material.dart';
 
@@ -255,6 +257,10 @@ class CategoriesScroller extends StatelessWidget {
                     margin: EdgeInsets.only(right: 5),
                     height: categoryHeight,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: new AssetImage('assets/sanju.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                       color: Colors.orange.shade400,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
@@ -270,10 +276,10 @@ class CategoriesScroller extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            'Dasa Production',
+                            'Sachintha Dilshan',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -292,7 +298,7 @@ class CategoriesScroller extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            'Discription',
+                            'Actor',
                             style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.white,
@@ -318,6 +324,10 @@ class CategoriesScroller extends StatelessWidget {
                     margin: EdgeInsets.only(right: 5),
                     height: categoryHeight,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: new AssetImage('assets/shan.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                       color: Colors.orange.shade400,
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
@@ -336,10 +346,10 @@ class CategoriesScroller extends StatelessWidget {
                         padding: EdgeInsets.all(10),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: <Widget>[
                             Text(
-                              'Video Name',
+                              'Harshana Madushanka',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white,
@@ -358,7 +368,7 @@ class CategoriesScroller extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              'Discription',
+                              'Director',
                               style: TextStyle(
                                 fontSize: 15.0,
                                 color: Colors.white,
@@ -385,6 +395,10 @@ class CategoriesScroller extends StatelessWidget {
                     height: categoryHeight,
                     margin: EdgeInsets.only(right: 5),
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: new AssetImage('assets/shan.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                       color: Colors.orange.shade400,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
@@ -400,10 +414,10 @@ class CategoriesScroller extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            'Video Name',
+                            'Gagan Akila',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -422,7 +436,7 @@ class CategoriesScroller extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            'Discription',
+                            'Actor',
                             style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.white,
@@ -448,6 +462,10 @@ class CategoriesScroller extends StatelessWidget {
                     height: categoryHeight,
                     margin: EdgeInsets.only(right: 5),
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: new AssetImage('assets/shan.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                       color: Colors.orange.shade400,
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       boxShadow: [
@@ -463,10 +481,10 @@ class CategoriesScroller extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: <Widget>[
                           Text(
-                            'Video Name',
+                            'Pramuditha Pasanga',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -485,7 +503,7 @@ class CategoriesScroller extends StatelessWidget {
                             height: 5,
                           ),
                           Text(
-                            'Discription',
+                            'Actor',
                             style: TextStyle(
                               fontSize: 15.0,
                               color: Colors.white,
