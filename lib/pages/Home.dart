@@ -49,35 +49,38 @@ class _HomeState extends State<Home> {
                   Expanded(
                     flex: 2,
                     child: Column(
+                      // mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
                           element['name'],
                           style: TextStyle(
                             color: Colors.black,
+                            fontFamily: 'SansitaSwashed',
                             fontSize: 28,
                           ),
                         ),
                         SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          element['brand'],
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 18,
-                          ),
-                        ),
+                        // Text(
+                        //   element['brand'],
+                        //   style: TextStyle(
+                        //     color: Colors.black,
+                        //     fontSize: 18,
+                        //   ),
+                        // ),
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          "\$ ${element['price']}",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        // Text(
+                        //   "\$ ${element['price']}",
+                        //   style: TextStyle(
+                        //     color: Colors.black,
+                        //     fontSize: 28,
+                        //     fontWeight: FontWeight.bold,
+                        //   ),
+                        // ),
                       ],
                     ),
                   ),
@@ -86,6 +89,11 @@ class _HomeState extends State<Home> {
                     child: Container(
                       height: 100,
                       decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.red,
+                          width: 5,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                           image: AssetImage(
                             "assets/${element["image"]}",
@@ -146,10 +154,6 @@ class _HomeState extends State<Home> {
         actions: <Widget>[
           IconButton(
               icon: const Icon(Icons.search),
-              color: Colors.black,
-              onPressed: () => {}),
-          IconButton(
-              icon: Icon(Icons.person),
               color: Colors.black,
               onPressed: () => {}),
         ],
@@ -368,7 +372,7 @@ class CategoriesScroller extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              'Director',
+                              'Actor',
                               style: TextStyle(
                                 fontSize: 15.0,
                                 color: Colors.white,
@@ -645,8 +649,8 @@ class CategoriesScroller extends StatelessWidget {
                               shadows: <Shadow>[
                                 Shadow(
                                   color: Colors.black,
-                                  offset: Offset(1, 1),
-                                  blurRadius: 5,
+                                  offset: Offset(3, 3),
+                                  blurRadius: 15,
                                 )
                               ],
                             ),
