@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:dasaproduction/videos/videos.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +7,10 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
+  TabController _tabController;
+  ScrollController _scrollController;
+
   List<Widget> itemData = [];
   ScrollController controller = ScrollController();
   bool closeTopContainer = false;
@@ -126,6 +128,16 @@ class _HomeState extends State<Home> {
         topContainer = value;
       });
     });
+
+    _tabController = TabController(length: 2, vsync: this);
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+    _scrollController.dispose();
   }
 
   final CategoriesScroller categoriesScroller = CategoriesScroller();
@@ -158,8 +170,17 @@ class _HomeState extends State<Home> {
               onPressed: () => {}),
         ],
       ),
-      body: SafeArea(
-        child: Container(
+      body: NestedScrollView(
+        controller: _scrollController,
+        headerSliverBuilder: (BuildContext context, bool boxIsSroll) {
+          return <Widget>[
+            SliverAppBar(
+              pinned: true,
+              floating: true,
+            )
+          ];
+        },
+        body: Container(
           child: Column(
             children: <Widget>[
               Row(
